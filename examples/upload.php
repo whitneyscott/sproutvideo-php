@@ -18,7 +18,10 @@ if (empty($_FILES)) {
 	rename($_FILES["file"]["tmp_name"], $destination);
 
 	//upload!
-	$result = SproutVideo\Video::create_video("@{$destination}");
+	//line below causes errors
+	//$result = SproutVideo\Video::create_video("@{$destination}");
+	//line below works
+	$result = SproutVideo\Video::create_video($destination);
 }
 ?>
 <pre>
